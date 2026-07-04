@@ -1,0 +1,998 @@
+/* ==========================================================
+   TITANIC AI - PREMIUM UI
+   Author : Krishna Rajoo
+   Theme  : Dark Ocean
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#06111F;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    position:relative;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#1d4ed8 0%,#0B1120 35%,#050B16 100%);
+
+}
+
+/* ===========================
+   STARS
+=========================== */
+
+.stars,
+.stars2{
+
+    position:absolute;
+
+    inset:0;
+
+    background-repeat:repeat;
+
+    animation:twinkle 8s linear infinite;
+
+}
+
+.stars{
+
+    opacity:.45;
+
+    background-image:
+
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+}
+
+.stars2{
+
+    opacity:.25;
+
+    background-image:
+
+    radial-gradient(#60A5FA 1px,transparent 1px);
+
+    background-size:120px 120px;
+
+    animation-duration:14s;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.3;
+
+}
+
+50%{
+
+opacity:.7;
+
+}
+
+100%{
+
+opacity:.3;
+
+}
+
+}
+
+/* ===========================
+   MOON
+=========================== */
+
+.moon{
+
+position:absolute;
+
+top:70px;
+
+right:100px;
+
+width:140px;
+
+height:140px;
+
+border-radius:50%;
+
+background:#E2E8F0;
+
+box-shadow:
+
+0 0 30px rgba(255,255,255,.5),
+
+0 0 80px rgba(96,165,250,.35);
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+width:100%;
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:50px 20px;
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.glass-card{
+
+width:100%;
+
+max-width:920px;
+
+padding:45px;
+
+border-radius:30px;
+
+background:rgba(17,24,39,.72);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.45),
+
+0 0 30px rgba(37,99,235,.15);
+
+animation:cardFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.ship-icon{
+
+width:110px;
+
+height:110px;
+
+margin:auto;
+
+margin-bottom:25px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:50px;
+
+background:linear-gradient(135deg,#2563EB,#38BDF8);
+
+box-shadow:
+
+0 0 30px rgba(37,99,235,.5),
+
+0 0 70px rgba(56,189,248,.3);
+
+animation:shipFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes shipFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+letter-spacing:1px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+color:#CBD5E1;
+
+line-height:1.7;
+
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+form h2{
+
+margin-bottom:30px;
+
+font-size:24px;
+
+color:#60A5FA;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+/* ==========================================================
+   FORM LAYOUT
+========================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+.field{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.field.full{
+
+    grid-column:1 / -1;
+
+}
+
+/* ==========================================================
+   LABELS
+========================================================== */
+
+.field label{
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    margin-bottom:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.field label i{
+
+    color:#38BDF8;
+
+    width:18px;
+
+}
+
+/* ==========================================================
+   INPUTS & SELECTS
+========================================================== */
+
+.field input,
+.field select{
+
+    width:100%;
+
+    height:55px;
+
+    padding:0 18px;
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(15,23,42,.9);
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.35s;
+
+    outline:none;
+
+}
+
+.field input::placeholder{
+
+    color:#94A3B8;
+
+}
+
+.field select{
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   INPUT FOCUS
+========================================================== */
+
+.field input:focus,
+.field select:focus{
+
+    border-color:#3B82F6;
+
+    background:#111827;
+
+    box-shadow:
+
+    0 0 0 4px rgba(59,130,246,.15),
+
+    0 0 20px rgba(59,130,246,.25);
+
+}
+
+/* ==========================================================
+   INPUT HOVER
+========================================================== */
+
+.field input:hover,
+.field select:hover{
+
+    border-color:#60A5FA;
+
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.predict-btn{
+
+    width:100%;
+
+    height:58px;
+
+    margin-top:35px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(135deg,#2563EB,#38BDF8);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 10px 25px rgba(37,99,235,.35);
+
+}
+
+/* ==========================================================
+   BUTTON HOVER
+========================================================== */
+
+.predict-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 18px 35px rgba(37,99,235,.45);
+
+}
+
+/* ==========================================================
+   BUTTON CLICK
+========================================================== */
+
+.predict-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.predict-btn:disabled{
+
+    opacity:.8;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================================
+   INPUT NUMBER ARROWS
+========================================================== */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+input[type=number]{
+
+    -moz-appearance:textfield;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:850px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.glass-card{
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:36px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.ship-icon{
+
+width:90px;
+
+height:90px;
+
+font-size:42px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+body{
+
+padding:20px 10px;
+
+}
+
+.glass-card{
+
+padding:22px;
+
+border-radius:22px;
+
+}
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+form h2{
+
+font-size:20px;
+
+}
+
+.predict-btn{
+
+font-size:16px;
+
+}
+
+}
+
+/* ==========================================================
+   OCEAN WAVES
+========================================================== */
+
+.wave{
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:200%;
+
+    height:170px;
+
+    border-radius:43%;
+
+    transform:translate3d(0,0,0);
+
+}
+
+.wave1{
+
+    background:rgba(37,99,235,.28);
+
+    animation:waveMove1 14s linear infinite;
+
+}
+
+.wave2{
+
+    background:rgba(56,189,248,.20);
+
+    bottom:20px;
+
+    animation:waveMove2 20s linear infinite reverse;
+
+}
+
+.wave3{
+
+    background:rgba(96,165,250,.12);
+
+    bottom:40px;
+
+    animation:waveMove3 28s linear infinite;
+
+}
+
+@keyframes waveMove1{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(-50%);
+
+}
+
+}
+
+@keyframes waveMove2{
+
+0%{
+
+transform:translateX(-50%);
+
+}
+
+100%{
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes waveMove3{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(-50%);
+
+}
+
+}
+
+/* ==========================================================
+   GLOWING PARTICLES
+========================================================== */
+
+.background::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+radial-gradient(circle,#ffffff 1px,transparent 1px),
+
+radial-gradient(circle,#60A5FA 1px,transparent 1px),
+
+radial-gradient(circle,#38BDF8 2px,transparent 2px);
+
+background-size:
+
+180px 180px,
+
+260px 260px,
+
+420px 420px;
+
+opacity:.25;
+
+animation:particleMove 45s linear infinite;
+
+}
+
+@keyframes particleMove{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-180px);
+
+}
+
+}
+
+/* ==========================================================
+   PREDICTION CARD
+========================================================== */
+
+.prediction-card{
+
+margin-top:35px;
+
+padding:30px;
+
+border-radius:22px;
+
+background:rgba(15,23,42,.95);
+
+border:1px solid rgba(96,165,250,.20);
+
+box-shadow:
+
+0 10px 30px rgba(37,99,235,.20);
+
+text-align:center;
+
+animation:fadeUp .7s ease;
+
+}
+
+.prediction-card h2{
+
+color:#60A5FA;
+
+font-size:26px;
+
+margin-bottom:18px;
+
+}
+
+.prediction-card p{
+
+font-size:24px;
+
+font-weight:600;
+
+line-height:1.7;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================================================
+   GLOW EFFECTS
+========================================================== */
+
+.glass-card::before{
+
+content:"";
+
+position:absolute;
+
+width:260px;
+
+height:260px;
+
+background:#2563EB;
+
+border-radius:50%;
+
+filter:blur(130px);
+
+top:-120px;
+
+right:-120px;
+
+opacity:.18;
+
+pointer-events:none;
+
+}
+
+.glass-card::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+background:#38BDF8;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+bottom:-100px;
+
+left:-100px;
+
+opacity:.12;
+
+pointer-events:none;
+
+}
+
+/* Make pseudo-elements stay inside card */
+
+.glass-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* ==========================================================
+   HERO IMPROVEMENT
+========================================================== */
+
+.hero{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.hero h1{
+
+background:linear-gradient(90deg,#ffffff,#60A5FA,#38BDF8);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+max-width:500px;
+
+margin:auto;
+
+}
+
+/* ==========================================================
+FOOTER
+========================================================== */
+
+.footer{
+
+margin-top:35px;
+
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+color:#94A3B8;
+
+font-size:14px;
+
+line-height:1.8;
+
+}
+
+/* ==========================================================
+SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#07111F;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#2563EB;
+
+border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#3B82F6;
+
+}
+.prediction-card h3{
+
+margin-top:20px;
+
+font-size:32px;
+
+color:#38BDF8;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
